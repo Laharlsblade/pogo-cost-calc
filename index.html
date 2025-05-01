@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <script src="index.js" type="module"></script>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div class="info-container">
+            <div class="row">
+                <label for="pokemon-selector">Pokemon</label>
+                <span id="dropdown">
+                    <input id="pokemon-selector"/>
+                    <div id="dropdown-menu" class="removed"></div>
+                </span>
+                <div class="iv-container">
+                    <label>ATK</label>
+                    <input id="atk-selector" type="number" min="0" max="15"/>
+                </div>
+                <div class="iv-container">
+                    <label>DEF</label>
+                    <input id="def-selector" type="number" min="0" max="15"/>
+                </div>
+                <div class="iv-container">
+                    <label>HP</label>
+                    <input id="hp-selector" type="number" min="0" max="15"/>
+                </div>
+            </div>
+            <div class="row">
+                <label for="cp-selector">CP</label>
+                <input id="cp-selector" type="number" min="10"/>
+                <label for="level-selector">Level</label>
+                <input id="level-selector" type="number" min="1" max="50" step="0.5"/>
+            </div>
+            <div class="row">
+                <input id="shadow-toggle" type="checkbox"/>
+                <label for="shadow-toggle">Shadow</label>
+                <input id="purified-toggle" type="checkbox"/>
+                <label for="purified-toggle">Purified</label>
+                <input id="lucky-toggle" type="checkbox"/>
+                <label for="lucky-toggle">Lucky</label>
+            </div>
+            <div class="separator"></div>
+            <div class="row">
+                <div class="key-level">
+                    <label>Custom</label>
+                    <table>
+                        <thead>
+                            <td class="level">Level</td>
+                            <td class="cp">CP</td>
+                            <td class="stardust">Stardust</td>
+                            <td class="candy">Candy</td>
+                            <td class="xl">XL Candy</td>
+                        </thead>
+                        <tbody>
+                            <tr id="target-row">
+                                <td class="level"><input id="target-selector" placeholder="Enter Level..." type="number" min="1" max="50" step="0.5"/></td>
+                                <td class="cp"></td>
+                                <td class="stardust"></td>
+                                <td class="candy"></td>
+                                <td class="xl"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="key-level">
+                    <label>Great League</label>
+                    <table>
+                        <thead>
+                            <td class="level">Level</td>
+                            <td class="cp">CP</td>
+                            <td class="stardust">Stardust</td>
+                            <td class="candy">Candy</td>
+                            <td class="xl">XL Candy</td>
+                        </thead>
+                        <tbody>
+                            <tr id="great-row">
+                                <td class="level"></td>
+                                <td class="cp"></td>
+                                <td class="stardust"></td>
+                                <td class="candy"></td>
+                                <td class="xl"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="key-level">
+                    <label>Ultra League</label>
+                    <table>
+                        <thead>
+                            <td class="level">Level</td>
+                            <td class="cp">CP</td>
+                            <td class="stardust">Stardust</td>
+                            <td class="candy">Candy</td>
+                            <td class="xl">XL Candy</td>
+                        </thead>
+                        <tbody>
+                            <tr id="ultra-row">
+                                <td class="level"></td>
+                                <td class="cp"></td>
+                                <td class="stardust"></td>
+                                <td class="candy"></td>
+                                <td class="xl"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <td class="level">Level</td>
+                <td class="cp">CP</td>
+                <td class="stardust">Stardust</td>
+                <td class="candy">Candy</td>
+                <td class="xl">XL Candy</td>
+            </thead>
+            <tbody id="table"></tbody>
+        </table>
+    </body>
+</html>
