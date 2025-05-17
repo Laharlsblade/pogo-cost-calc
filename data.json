@@ -7160,7 +7160,7 @@
         },
         {
             "name": "Zacian - Crowned Sword",
-            "atk": 295,
+            "atk": 332,
             "def": 240,
             "hp": 192
         },
@@ -7172,8 +7172,8 @@
         },
         {
             "name": "Zamazenta - Crowned Shield",
-            "atk": 231,
-            "def": 282,
+            "atk": 250,
+            "def": 292,
             "hp": 192
         },
         {
