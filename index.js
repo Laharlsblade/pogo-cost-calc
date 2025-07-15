@@ -151,6 +151,8 @@ function updateSelectedDropdownIndex(e) {
         if(dropdownMenuSelectedIndex >= menuItems.length) {
             dropdownMenuSelectedIndex = 0;
         }
+
+        menuItems[dropdownMenuSelectedIndex].classList.add('selected');
     } else if(e.key === 'ArrowUp') {
         e.preventDefault();
         if(dropdownMenuSelectedIndex !== -1) {
@@ -162,6 +164,8 @@ function updateSelectedDropdownIndex(e) {
         if(dropdownMenuSelectedIndex < 0) {
             dropdownMenuSelectedIndex = menuItems.length - 1;
         }
+
+        menuItems[dropdownMenuSelectedIndex].classList.add('selected');
     } else if(e.key === 'Enter') {
         const name = menuItems[dropdownMenuSelectedIndex].innerText;
         const pokemon = data.pokemon.find(x => x.name === name);
@@ -183,13 +187,27 @@ function updateSelectedDropdownIndex(e) {
 
         return;
     } else if(e.key === 'Tab') {
+        if(!dropdownMenu.classList.contains('removed') && menuItems.length >= 1) {
+            const name = menuItems[dropdownMenuSelectedIndex >= 0 ? dropdownMenuSelectedIndex : 0].innerText;
+            const pokemon = data.pokemon.find(x => x.name === name);
+            
+            selectedPokemon = pokemon;
+            pokemonSelector.value = pokemon.name;
+            updatePokemonList();
+
+            if(selectedLevel) {
+                selectedCp = calculateCp(selectedPokemon, selectedLevel, selectedAtk, selectedDef, selectedHp);
+                cpSelector.value = selectedCp;
+            }
+
+            updateCosts();
+        }
+        
         clearSelectedDropdownIndex();
         dropdownMenu.classList.add('removed');
     } else {
         return;
     }
-
-    menuItems[dropdownMenuSelectedIndex].classList.add('selected');
 }
 
 function clearSelectedDropdownIndex() {
