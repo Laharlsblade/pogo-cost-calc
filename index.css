@@ -203,3 +203,11 @@ input[type=checkbox] {
     cursor: pointer;
     margin-left: 2rem;
 }
+
+.last-updated {
+    font-size: 1.6rem;
+    position: fixed;
+    right: 1rem;
+    top: 0.5rem;
+    max-width: calc(50vw - 15rem);
+}
