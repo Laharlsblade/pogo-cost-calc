@@ -1471,12 +1471,6 @@
 			"hp": 172
 		},
 		{
-			"name": "Sudowoodo",
-			"atk": 167,
-			"def": 176,
-			"hp": 172
-		},
-		{
 			"name": "Politoed",
 			"atk": 174,
 			"def": 179,
@@ -5471,18 +5465,6 @@
 			"atk": 145,
 			"def": 161,
 			"hp": 149
-		},
-		{
-			"name": "Charjabug",
-			"atk": 145,
-			"def": 161,
-			"hp": 149
-		},
-		{
-			"name": "Vikavolt",
-			"atk": 254,
-			"def": 158,
-			"hp": 184
 		},
 		{
 			"name": "Vikavolt",
