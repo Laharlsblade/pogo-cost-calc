@@ -601,6 +601,12 @@
 			"hp": 190
 		},
 		{
+			"name": "Mega Victreebel",
+			"atk": 265,
+			"def": 181,
+			"hp": 190
+		},
+		{
 			"name": "Tentacool",
 			"atk": 97,
 			"def": 149,
@@ -1234,6 +1240,12 @@
 			"name": "Dragonite",
 			"atk": 263,
 			"def": 198,
+			"hp": 209
+		},
+		{
+			"name": "Mega Dragonite",
+			"atk": 299,
+			"def": 255,
 			"hp": 209
 		},
 		{
@@ -5092,6 +5104,12 @@
 			"name": "Malamar",
 			"atk": 177,
 			"def": 165,
+			"hp": 200
+		},
+		{
+			"name": "Mega Malamar",
+			"atk": 208,
+			"def": 222,
 			"hp": 200
 		},
 		{
