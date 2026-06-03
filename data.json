@@ -199,6 +199,12 @@
 			"hp": 111
 		},
 		{
+			"name": "Pikachu Bb 2026",
+			"atk": 112,
+			"def": 96,
+			"hp": 111
+		},
+		{
 			"name": "Pikachu Costume 2020",
 			"atk": 112,
 			"def": 96,
@@ -212,12 +218,6 @@
 		},
 		{
 			"name": "Pikachu Flying 01",
-			"atk": 112,
-			"def": 96,
-			"hp": 111
-		},
-		{
-			"name": "Pikachu Gofest 2024 Mtiara",
 			"atk": 112,
 			"def": 96,
 			"hp": 111
@@ -1253,6 +1253,18 @@
 			"atk": 300,
 			"def": 182,
 			"hp": 214
+		},
+		{
+			"name": "Mega Mewtwo X",
+			"atk": 399,
+			"def": 215,
+			"hp": 228
+		},
+		{
+			"name": "Mega Mewtwo Y",
+			"atk": 413,
+			"def": 223,
+			"hp": 228
 		},
 		{
 			"name": "Mewtwo A",
@@ -6442,6 +6454,12 @@
 			"name": "Falinks",
 			"atk": 193,
 			"def": 170,
+			"hp": 163
+		},
+		{
+			"name": "Mega Falinks",
+			"atk": 267,
+			"def": 229,
 			"hp": 163
 		},
 		{
