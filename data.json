@@ -253,6 +253,18 @@
 			"hp": 155
 		},
 		{
+			"name": "Mega Raichu X",
+			"atk": 277,
+			"def": 203,
+			"hp": 155
+		},
+		{
+			"name": "Mega Raichu Y",
+			"atk": 339,
+			"def": 157,
+			"hp": 155
+		},
+		{
 			"name": "Raichu Alola",
 			"atk": 201,
 			"def": 154,
@@ -7319,12 +7331,6 @@
 			"atk": 254,
 			"def": 168,
 			"hp": 229
-		},
-		{
-			"name": "Gimmighoul",
-			"atk": 140,
-			"def": 76,
-			"hp": 128
 		},
 		{
 			"name": "Gimmighoul",
