@@ -1027,6 +1027,12 @@
 			"hp": 155
 		},
 		{
+			"name": "Mega Starmie",
+			"atk": 276,
+			"def": 229,
+			"hp": 155
+		},
+		{
 			"name": "Mr Mime",
 			"atk": 192,
 			"def": 205,
@@ -4915,6 +4921,12 @@
 			"hp": 204
 		},
 		{
+			"name": "Mega Chesnaught",
+			"atk": 242,
+			"def": 282,
+			"hp": 204
+		},
+		{
 			"name": "Fennekin",
 			"atk": 116,
 			"def": 102,
@@ -4933,6 +4945,12 @@
 			"hp": 181
 		},
 		{
+			"name": "Mega Delphox",
+			"atk": 331,
+			"def": 235,
+			"hp": 181
+		},
+		{
 			"name": "Froakie",
 			"atk": 122,
 			"def": 84,
@@ -4948,6 +4966,12 @@
 			"name": "Greninja",
 			"atk": 223,
 			"def": 152,
+			"hp": 176
+		},
+		{
+			"name": "Mega Greninja",
+			"atk": 299,
+			"def": 180,
 			"hp": 176
 		},
 		{
