@@ -199,30 +199,6 @@
 			"hp": 111
 		},
 		{
-			"name": "Pikachu",
-			"atk": 112,
-			"def": 96,
-			"hp": 111
-		},
-		{
-			"name": "Pikachu",
-			"atk": 112,
-			"def": 96,
-			"hp": 111
-		},
-		{
-			"name": "Pikachu",
-			"atk": 112,
-			"def": 96,
-			"hp": 111
-		},
-		{
-			"name": "Pikachu",
-			"atk": 112,
-			"def": 96,
-			"hp": 111
-		},
-		{
 			"name": "Pikachu Bb 2026",
 			"atk": 112,
 			"def": 96,
@@ -248,12 +224,6 @@
 		},
 		{
 			"name": "Pikachu Horizons",
-			"atk": 112,
-			"def": 96,
-			"hp": 111
-		},
-		{
-			"name": "Pikachu",
 			"atk": 112,
 			"def": 96,
 			"hp": 111
@@ -1231,7 +1201,25 @@
 			"hp": 190
 		},
 		{
+			"name": "Aerodactyl Summer 2023",
+			"atk": 221,
+			"def": 159,
+			"hp": 190
+		},
+		{
+			"name": "Mega Aerodactyl Summer 2023",
+			"atk": 292,
+			"def": 210,
+			"hp": 190
+		},
+		{
 			"name": "Snorlax",
+			"atk": 190,
+			"def": 169,
+			"hp": 330
+		},
+		{
+			"name": "Snorlax Wildarea 2024",
 			"atk": 190,
 			"def": 169,
 			"hp": 330
@@ -6404,6 +6392,12 @@
 		},
 		{
 			"name": "Toxtricity",
+			"atk": 224,
+			"def": 140,
+			"hp": 181
+		},
+		{
+			"name": "Toxtricity Amped",
 			"atk": 224,
 			"def": 140,
 			"hp": 181
