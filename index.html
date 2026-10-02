@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
-        <span class="last-updated">Last updated on September 9 2026</span>
+        <span class="last-updated">Last updated on Oct 2 2026</span>
         <div class="info-container">
             <div class="row">
                 <label for="pokemon-selector">Pokemon</label>
@@ -13,15 +13,15 @@
                     <div id="dropdown-menu" class="removed"></div>
                 </span>
                 <div class="iv-container">
-                    <label>ATK</label>
+                    <label for="atk-selector">ATK</label>
                     <input id="atk-selector" type="number" min="0" max="15"/>
                 </div>
                 <div class="iv-container">
-                    <label>DEF</label>
+                    <label for="def-selector">DEF</label>
                     <input id="def-selector" type="number" min="0" max="15"/>
                 </div>
                 <div class="iv-container">
-                    <label>HP</label>
+                    <label for="hp-selector">HP</label>
                     <input id="hp-selector" type="number" min="0" max="15"/>
                 </div>
             </div>
@@ -61,6 +61,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="stats-row" id="target-stats"></div>
                 </div>
             </div>
             <div class="row">
@@ -84,6 +85,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="stats-row" id="great-stats"></div>
                 </div>
                 <div class="key-level">
                     <label>Ultra League</label>
@@ -105,6 +107,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="stats-row" id="ultra-stats"></div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 
-let pokemonSelector, cpSelector, levelSelector, atkSelector, defSelector, hpSelector, targetSelector, luckyToggle, shadowToggle, purifiedToggle, dropdownMenu, targetRow, greatRow, ultraRow, table;
+let pokemonSelector, cpSelector, levelSelector, atkSelector, atkLabel, defSelector, defLabel, hpSelector, hpLabel, targetSelector, luckyToggle, shadowToggle, purifiedToggle, dropdownMenu, targetRow, targetStats, greatRow, greatStats, ultraRow, ultraStats, table;
 let noPokemonEl;
 const rows = [];
 
@@ -22,8 +22,11 @@ Promise.all(
             window.onload = () => {
                 pokemonSelector = document.querySelector('#pokemon-selector');
                 atkSelector = document.querySelector('#atk-selector');
+                atkLabel = atkSelector.parentElement.children[0];
                 defSelector = document.querySelector('#def-selector');
+                defLabel = defSelector.parentElement.children[0];
                 hpSelector = document.querySelector('#hp-selector');
+                hpLabel = hpSelector.parentElement.children[0];
                 levelSelector = document.querySelector('#level-selector');
                 cpSelector = document.querySelector('#cp-selector');
                 targetSelector = document.querySelector('#target-selector');
@@ -32,8 +35,11 @@ Promise.all(
                 purifiedToggle = document.querySelector('#purified-toggle');
                 dropdownMenu = document.querySelector('#dropdown-menu');
                 targetRow = document.querySelector('#target-row');
+                targetStats = document.querySelector('#target-stats');
                 greatRow = document.querySelector('#great-row');
+                greatStats = document.querySelector('#great-stats');
                 ultraRow = document.querySelector('#ultra-row');
+                ultraStats = document.querySelector('#ultra-stats');
                 table = document.querySelector('#table');
 
                 resolve();
@@ -111,6 +117,15 @@ function updatePurified() {
     updateCosts();
 }
 
+function selectPokemon(p) {
+    selectedPokemon = p;
+    pokemonSelector.value = p.name;
+
+    atkLabel.innerText = `ATK (${p.atk})`;
+    defLabel.innerText = `DEF (${p.def})`;
+    hpLabel.innerText = `HP (${p.hp})`;
+}
+
 const searchReplaceRegex = /[-() %.:'♀♂]/gi;
 
 function addPokemonToList() {
@@ -118,8 +133,7 @@ function addPokemonToList() {
         let el = document.createElement('div');
         el.innerText = pokemon.name;
         el.addEventListener('click', () => {
-            selectedPokemon = pokemon;
-            pokemonSelector.value = pokemon.name;
+            selectPokemon(pokemon);
             updatePokemonList()
 
             if(selectedLevel) {
@@ -172,8 +186,7 @@ function updateSelectedDropdownIndex(e) {
 
         clearSelectedDropdownIndex();
         
-        selectedPokemon = pokemon;
-        pokemonSelector.value = pokemon.name;
+        selectPokemon(pokemon);
         updatePokemonList();
 
         if(selectedLevel) {
@@ -191,8 +204,7 @@ function updateSelectedDropdownIndex(e) {
             const name = menuItems[dropdownMenuSelectedIndex >= 0 ? dropdownMenuSelectedIndex : 0].innerText;
             const pokemon = data.pokemon.find(x => x.name === name);
             
-            selectedPokemon = pokemon;
-            pokemonSelector.value = pokemon.name;
+            selectPokemon(pokemon);
             updatePokemonList();
 
             if(selectedLevel) {
@@ -217,22 +229,6 @@ function clearSelectedDropdownIndex() {
 
     dropdownMenu.querySelectorAll(':not(.removed)')[dropdownMenuSelectedIndex].classList.remove('selected');
     dropdownMenuSelectedIndex = -1;
-}
-
-function updateTarget() {
-    let row = data.levels.find(x => +targetSelector.value === x.level);
-
-    if (!row) {
-        for(let i = 1; i < 5; i++) {
-            targetRow.children[i].innerText = '';
-        }
-
-        return;
-    }
-
-    for(let i = 1; i < 5; i++) {
-        targetRow.children[i].innerText = row.el.children[i].innerText;
-    }
 }
 
 function updatePokemonList() {
@@ -264,8 +260,69 @@ function updatePokemonList() {
     }
 }
 
-function updatePokemon() {
-    updateCosts();
+function updateTarget() {
+    let targetLevel = data.levels.find(x => +targetSelector.value === x.level);
+
+    if (!targetLevel) {
+        for(let i = 1; i < 5; i++) {
+            targetRow.children[i].innerText = '';
+        }
+
+        targetStats.innerText = '';
+
+        return;
+    }
+
+    for(let i = 1; i < 5; i++) {
+        targetRow.children[i].innerText = targetLevel.el.children[i].innerText;
+    }
+    
+    let atkValue = parseInt(atkSelector.value);
+    let defValue = parseInt(defSelector.value);
+    let hpValue = parseInt(hpSelector.value);
+
+    selectedAtk = atkValue >= 0 && atkValue <= 15 && atkValue % 1 === 0 ? atkValue : 15;
+    selectedDef = defValue >= 0 && defValue <= 15 && defValue % 1 === 0 ? defValue : 15;
+    selectedHp = hpValue >= 0 && hpValue <= 15 && hpValue % 1 === 0 ? hpValue : 15;
+    
+    const targetDisplayAtk = Math.floor(((selectedPokemon.atk + selectedAtk) * targetLevel.mult) * 10) / 10;
+    const targetDisplayDef = Math.floor(((selectedPokemon.def + selectedDef) * targetLevel.mult) * 10) / 10;
+    const targetDisplayHp = Math.floor(((selectedPokemon.hp + selectedHp) * targetLevel.mult));
+
+    targetStats.innerText = `ATK: ${targetDisplayAtk} | DEF: ${targetDisplayDef} | HP: ${targetDisplayHp}`;
+}
+
+function updateGblRows(greatLevel, ultraLevel) {
+    if(!greatLevel) {
+        greatLevel = data.levels[data.levels.length - 3];
+    }
+
+    if(!ultraLevel) {
+        ultraLevel = data.levels[data.levels.length - 3];
+    }
+    
+    for(let i = 0; i < 5; i++) {
+        greatRow.children[i].innerText = greatLevel.el.children[i].innerText;
+        ultraRow.children[i].innerText = ultraLevel.el.children[i].innerText;
+    }
+
+    let atkValue = parseInt(atkSelector.value);
+    let defValue = parseInt(defSelector.value);
+    let hpValue = parseInt(hpSelector.value);
+
+    selectedAtk = atkValue >= 0 && atkValue <= 15 && atkValue % 1 === 0 ? atkValue : 15;
+    selectedDef = defValue >= 0 && defValue <= 15 && defValue % 1 === 0 ? defValue : 15;
+    selectedHp = hpValue >= 0 && hpValue <= 15 && hpValue % 1 === 0 ? hpValue : 15;
+    
+    const greatDisplayAtk = Math.floor(((selectedPokemon.atk + selectedAtk) * greatLevel.mult) * 10) / 10;
+    const greatDisplayDef = Math.floor(((selectedPokemon.def + selectedDef) * greatLevel.mult) * 10) / 10;
+    const greatDisplayHp = Math.floor(((selectedPokemon.hp + selectedHp) * greatLevel.mult));
+    const ultraDisplayAtk = Math.floor(((selectedPokemon.atk + selectedAtk) * ultraLevel.mult) * 10) / 10;
+    const ultraDisplayDef = Math.floor(((selectedPokemon.def + selectedDef) * ultraLevel.mult) * 10) / 10;
+    const ultraDisplayHp = Math.floor(((selectedPokemon.hp + selectedHp) * ultraLevel.mult));
+
+    greatStats.innerText = `ATK: ${greatDisplayAtk} | DEF: ${greatDisplayDef} | HP: ${greatDisplayHp}`;
+    ultraStats.innerText = `ATK: ${ultraDisplayAtk} | DEF: ${ultraDisplayDef} | HP: ${ultraDisplayHp}`;
 }
 
 function updateIv() {
@@ -294,18 +351,8 @@ function updateIv() {
         level.el.children[1].innerText = cp;
     });
 
-    if(!greatLevel) {
-        greatLevel = data.levels[data.levels.length - 3];
-    }
-
-    if(!ultraLevel) {
-        ultraLevel = data.levels[data.levels.length - 3];
-    }
-    
-    for(let i = 0; i < 5; i++) {
-        greatRow.children[i].innerText = greatLevel.el.children[i].innerText;
-        ultraRow.children[i].innerText = ultraLevel.el.children[i].innerText;
-    }
+    updateGblRows(greatLevel, ultraLevel);
+    updateTarget();
 
     if(selectedPokemon && selectedCp && !selectedLevel) {
         try {
@@ -409,19 +456,7 @@ function updateCosts() {
         }
     });
 
-    if(!greatLevel) {
-        greatLevel = data.levels[data.levels.length - 3];
-    }
-
-    if(!ultraLevel) {
-        ultraLevel = data.levels[data.levels.length - 3];
-    }
-    
-    for(let i = 0; i < 5; i++) {
-        greatRow.children[i].innerText = greatLevel.el.children[i].innerText;
-        ultraRow.children[i].innerText = ultraLevel.el.children[i].innerText;
-    }
-
+    updateGblRows(greatLevel, ultraLevel);
     updateTarget();
 }
 
