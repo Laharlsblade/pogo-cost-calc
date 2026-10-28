@@ -224,5 +224,16 @@ input[type=checkbox] {
     position: fixed;
     right: 1rem;
     top: 0.5rem;
-    max-width: calc(50vw - 15rem);
+}
+
+@media (max-width: 1350px) {
+    .last-updated {
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 1190px) {
+    .last-updated {
+        display: none;
+    }
 }

@@ -4591,6 +4591,12 @@
 			"hp": 155
 		},
 		{
+			"name": "Mega Chandelure",
+			"atk": 335,
+			"def": 227,
+			"hp": 155
+		},
+		{
 			"name": "Axew",
 			"atk": 154,
 			"def": 101,
@@ -5281,10 +5287,22 @@
 			"hp": 169
 		},
 		{
+			"name": "Sliggoo Hisuian",
+			"atk": 153,
+			"def": 190,
+			"hp": 151
+		},
+		{
 			"name": "Goodra",
 			"atk": 220,
 			"def": 242,
 			"hp": 207
+		},
+		{
+			"name": "Goodra Hisuian",
+			"atk": 211,
+			"def": 255,
+			"hp": 190
 		},
 		{
 			"name": "Klefki",
@@ -5900,14 +5918,14 @@
 		},
 		{
 			"name": "Minior",
-			"atk": 116,
-			"def": 194,
+			"atk": 218,
+			"def": 131,
 			"hp": 155
 		},
 		{
-			"name": "Minior Blue",
-			"atk": 218,
-			"def": 131,
+			"name": "Minior Meteor",
+			"atk": 116,
+			"def": 194,
 			"hp": 155
 		},
 		{
