@@ -343,6 +343,12 @@
 			"hp": 216
 		},
 		{
+			"name": "Mega Clefable",
+			"atk": 253,
+			"def": 205,
+			"hp": 216
+		},
+		{
 			"name": "Vulpix",
 			"atk": 96,
 			"def": 109,
